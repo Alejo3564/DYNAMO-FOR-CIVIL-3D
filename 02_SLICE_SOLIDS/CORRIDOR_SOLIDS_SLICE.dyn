@@ -1,0 +1,1036 @@
+{
+  "Uuid": "8eedf36e-87a4-4a3e-b002-faf17b3c412a",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "CORRIDOR_SOLIDS_SLICE",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [
+    {
+      "Id": "ab7ce1125fec461098e655e4acaf7875",
+      "Name": "CORRIDOR NAME",
+      "Type": "string",
+      "Value": "Corridor - (1)",
+      "Description": "Creates a string.",
+      "SelectedIndex": 0
+    },
+    {
+      "Id": "1e4883c383424a13b086a58fcc9ee4da",
+      "Name": "REGION NAME",
+      "Type": "string",
+      "Value": "VIA FERREA1",
+      "Description": "Creates a string.",
+      "SelectedIndex": 0
+    },
+    {
+      "Id": "f0d403e3699642ea87b53309831a8044",
+      "Name": "ASSEMBLY NAME",
+      "Type": "string",
+      "Value": "VIA_BALASTRO",
+      "Description": "Creates a string.",
+      "SelectedIndex": 0
+    },
+    {
+      "Id": "707cd4b0cee842b3a96aee9c85c91ff8",
+      "Name": "CODE NAME",
+      "Type": "string",
+      "Value": "Subballast",
+      "Description": "Creates a string.",
+      "SelectedIndex": 0
+    }
+  ],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.AutoCAD.DynamoNodes.Document.Current",
+      "Id": "fd84e115f3d5471c85465fbc8d574de1",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "9983e7bcaeb44506b7aa10147bbdcc03",
+          "Name": "Document",
+          "Description": "Document",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Get the current AutoCAD document.\n\nDocument.Current: Document"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.Civil.DynamoNodes.Selection.CorridorByName@string,Autodesk.AutoCAD.DynamoNodes.Document",
+      "Id": "1ae8d63981114c8eb3bb3fad41654d0d",
+      "Inputs": [
+        {
+          "Id": "cabc0a1bd24d454f9cb6e27fa430a602",
+          "Name": "name",
+          "Description": "string",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "f5686b8a18ab4de8b45037bba3fc614c",
+          "Name": "document",
+          "Description": "Document",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "bd5b46704a3f491a926b0e2139020515",
+          "Name": "Corridor",
+          "Description": "Corridor",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Select a corridor by a specified corridor name.\n\nSelection.CorridorByName (name: string, document: Document): Corridor"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
+      "NodeType": "StringInputNode",
+      "InputValue": "Corridor - (1)",
+      "Id": "ab7ce1125fec461098e655e4acaf7875",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "a453e64b22074275a95c8a738509ba98",
+          "Name": "",
+          "Description": "String",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a string."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.Civil.DynamoNodes.Corridor.Baselines",
+      "Id": "c2895c127e694d11b8ab0b56af7b5386",
+      "Inputs": [
+        {
+          "Id": "442841cde69f46a39a7192f65e0c7770",
+          "Name": "corridor",
+          "Description": "Autodesk.Civil.DynamoNodes.Corridor",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "6f883c4695014071ad614ce1baf6f9c0",
+          "Name": "Baseline[]",
+          "Description": "Baseline[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Get all baselines from the corridor.\n\nCorridor.Baselines: Baseline[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.Civil.DynamoNodes.Baseline.EndStation",
+      "Id": "f9c7ecb9a165417195a7719385114c34",
+      "Inputs": [
+        {
+          "Id": "ed42d7c177974ce5ba07f1d045fde30e",
+          "Name": "baseline",
+          "Description": "Autodesk.Civil.DynamoNodes.Baseline",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "5fb031d3f56a4898bf3a87392dee9667",
+          "Name": "double",
+          "Description": "double",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Get the end station of the baseline.\n\nBaseline.EndStation: double"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.Civil.DynamoNodes.Baseline.StartStation",
+      "Id": "8d2e453782ce4e0bb0edb316a87326c2",
+      "Inputs": [
+        {
+          "Id": "2f4839de0c8d414f9c312d00d2704e80",
+          "Name": "baseline",
+          "Description": "Autodesk.Civil.DynamoNodes.Baseline",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "f1ca07bce5b546f7bc315e639ce76712",
+          "Name": "double",
+          "Description": "double",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Get the start station of the baseline.\n\nBaseline.StartStation: double"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "s+50..e..50;\ne;",
+      "Id": "6e2b56198c904a1386d36e502d230aa1",
+      "Inputs": [
+        {
+          "Id": "9c83458ad10e4ba0800cf02bf777e410",
+          "Name": "s",
+          "Description": "s",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "a8e9c1f2081e4c2d9d144319307a2279",
+          "Name": "e",
+          "Description": "e",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "729f374548cf4ca9b85877d00de75031",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "1c3c18555a064368ad65bbfbb7dfb6af",
+          "Name": "",
+          "Description": "Value of expression at line 2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.Civil.DynamoNodes.Baseline.CoordinateSystemByStation@double,bool",
+      "Id": "d8dfac1edaf14d26bf0ce07c2603bd2b",
+      "Inputs": [
+        {
+          "Id": "ad973508e2be47a08761dab70d8fd3b3",
+          "Name": "baseline",
+          "Description": "Autodesk.Civil.DynamoNodes.Baseline",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "6bff25d8cf3143efacc7c3a19ffde6f7",
+          "Name": "station",
+          "Description": "double",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "34de50fbf59d402d896e986b86c9e928",
+          "Name": "vertical",
+          "Description": "bool\nDefault value : true",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "4441620529ed43bdb8f68440c8574798",
+          "Name": "CoordinateSystem",
+          "Description": "CoordinateSystem",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Get the coordinate system by a station associated with the baseline.\n\nBaseline.CoordinateSystemByStation (station: double, vertical: bool = true): CoordinateSystem"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.CoordinateSystem.ZXPlane",
+      "Id": "e7236bda74674bf3b601a51148bdb119",
+      "Inputs": [
+        {
+          "Id": "5d869bf64f7c44f183b8f27bfe78a88e",
+          "Name": "coordinateSystem",
+          "Description": "Autodesk.DesignScript.Geometry.CoordinateSystem",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "944522b7fff547b3b9182a302bf90057",
+          "Name": "Plane",
+          "Description": "Plane",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Returns the Plane the Z and X axes lie in, with root at the origin.\n\nCoordinateSystem.ZXPlane: Plane"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.Civil.DynamoNodes.Corridor.GetSolids@string,string,string,string,string",
+      "Id": "89e7fb5019a4433fb5c30a1a743862f4",
+      "Inputs": [
+        {
+          "Id": "01ee0903daa540c3b029e6ef3fd1f815",
+          "Name": "corridor",
+          "Description": "Autodesk.Civil.DynamoNodes.Corridor",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "18e98f869a484bde8c3451a7ffe9a413",
+          "Name": "baselineName",
+          "Description": "string\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "57caaf0adc7d4786b44a62e5182f1113",
+          "Name": "regionName",
+          "Description": "string\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "560b8af3217845a68d1529d2b7e6fc02",
+          "Name": "assemblyName",
+          "Description": "string\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "60ef096f793143759813a621dae9eb63",
+          "Name": "codeName",
+          "Description": "string\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "6c3dd64a291c4c7383c54d33beb8300f",
+          "Name": "side",
+          "Description": "string\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "a98f27cd438c48e3a65d0768ea27de86",
+          "Name": "Solid[]",
+          "Description": "Solid[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Get solids generated from the corridor, filtered by property values of the solids.\n\nCorridor.GetSolids (baselineName: string = null, regionName: string = null, assemblyName: string = null, codeName: string = null, side: string = null): Solid[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.Civil.DynamoNodes.Baseline.Name",
+      "Id": "857c24bc7c0f475faacc15ac8fb4a640",
+      "Inputs": [
+        {
+          "Id": "3b8adf6511384564bca7809806811497",
+          "Name": "baseline",
+          "Description": "Autodesk.Civil.DynamoNodes.Baseline",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "8aa5a2486bb14f4484b2327071541c16",
+          "Name": "string",
+          "Description": "string",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Get the name of the baseline.\n\nBaseline.Name: string"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
+      "NodeType": "StringInputNode",
+      "InputValue": "VIA FERREA1",
+      "Id": "1e4883c383424a13b086a58fcc9ee4da",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "df2282dbd2274b099bc8b3f104ae6dc1",
+          "Name": "",
+          "Description": "String",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a string."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
+      "NodeType": "StringInputNode",
+      "InputValue": "VIA_BALASTRO",
+      "Id": "f0d403e3699642ea87b53309831a8044",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "ac74ca877f374caf99bd58ccc8303779",
+          "Name": "",
+          "Description": "String",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a string."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
+      "NodeType": "StringInputNode",
+      "InputValue": "Subballast",
+      "Id": "707cd4b0cee842b3a96aee9c85c91ff8",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "70ea9b29d60b4ba5a5e7e5982849c213",
+          "Name": "",
+          "Description": "String",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a string."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.AutoCAD.DynamoNodes.Solid.SliceByPlanes@Autodesk.DesignScript.Geometry.Plane[]",
+      "Id": "126342d6f74a47af94c813fe7bbbfe76",
+      "Inputs": [
+        {
+          "Id": "1458d5b0b5144f69a7361b1fc088b09e",
+          "Name": "solid",
+          "Description": "Autodesk.AutoCAD.DynamoNodes.Solid",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "e6ec145eecb146d3bed08cef5b0c9cb2",
+          "Name": "planes",
+          "Description": "The planes used to slice the solid\n\nPlane[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "5e403dc939324ee6851cb9abd071b03d",
+          "Name": "Solid[]",
+          "Description": "Solid[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Slice a solid with a list of planes. All sliced solids are retained in the drawing.\n\nSolid.SliceByPlanes (planes: Plane[]): Solid[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "a=baselines[0];",
+      "Id": "2b7bd6d8df814157b8f912ad50233a27",
+      "Inputs": [
+        {
+          "Id": "1057550e452043f787840ff40131519f",
+          "Name": "baselines",
+          "Description": "baselines",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "7706955a1fc24854a6b67e40684a8b47",
+          "Name": "",
+          "Description": "a",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "9983e7bcaeb44506b7aa10147bbdcc03",
+      "End": "f5686b8a18ab4de8b45037bba3fc614c",
+      "Id": "e4a8d4d5ab2f49e0a846cbd69e2c838d",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "bd5b46704a3f491a926b0e2139020515",
+      "End": "442841cde69f46a39a7192f65e0c7770",
+      "Id": "71e4c57bb1d6435f8581114f4e3198a8",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "bd5b46704a3f491a926b0e2139020515",
+      "End": "01ee0903daa540c3b029e6ef3fd1f815",
+      "Id": "f4f783e414d84a49add256aa00830456",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "a453e64b22074275a95c8a738509ba98",
+      "End": "cabc0a1bd24d454f9cb6e27fa430a602",
+      "Id": "2ccf55b11e4e4c64b90c2544eaae85e0",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "6f883c4695014071ad614ce1baf6f9c0",
+      "End": "1057550e452043f787840ff40131519f",
+      "Id": "16a373cd9d524ad2b37b822880f2b697",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "5fb031d3f56a4898bf3a87392dee9667",
+      "End": "a8e9c1f2081e4c2d9d144319307a2279",
+      "Id": "544fb3318704460fab9b176b60fe973a",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "f1ca07bce5b546f7bc315e639ce76712",
+      "End": "9c83458ad10e4ba0800cf02bf777e410",
+      "Id": "c072d8d17dc844ae9dc20845a82485ca",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "729f374548cf4ca9b85877d00de75031",
+      "End": "6bff25d8cf3143efacc7c3a19ffde6f7",
+      "Id": "f853dae86dbd459ba429d1a4c8e0780c",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "4441620529ed43bdb8f68440c8574798",
+      "End": "5d869bf64f7c44f183b8f27bfe78a88e",
+      "Id": "5095f5def65b4ee29574f50b1bab3a2f",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "944522b7fff547b3b9182a302bf90057",
+      "End": "e6ec145eecb146d3bed08cef5b0c9cb2",
+      "Id": "24b89a79c61549a58a111ece42295df5",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "a98f27cd438c48e3a65d0768ea27de86",
+      "End": "1458d5b0b5144f69a7361b1fc088b09e",
+      "Id": "cb77a29ad6614836bdc6b886c783b608",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "8aa5a2486bb14f4484b2327071541c16",
+      "End": "18e98f869a484bde8c3451a7ffe9a413",
+      "Id": "5325a0477a3842f7b83091c823672aa2",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "df2282dbd2274b099bc8b3f104ae6dc1",
+      "End": "57caaf0adc7d4786b44a62e5182f1113",
+      "Id": "1acad66b91354458a3024b42acc96b26",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "ac74ca877f374caf99bd58ccc8303779",
+      "End": "560b8af3217845a68d1529d2b7e6fc02",
+      "Id": "796dc4b601c04e668d2e2e3b9ec4c663",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "70ea9b29d60b4ba5a5e7e5982849c213",
+      "End": "60ef096f793143759813a621dae9eb63",
+      "Id": "43602b854d0c402f804ab295ca9de826",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "7706955a1fc24854a6b67e40684a8b47",
+      "End": "3b8adf6511384564bca7809806811497",
+      "Id": "5a861e7951e74c9d886e5a9bcc371dcd",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "7706955a1fc24854a6b67e40684a8b47",
+      "End": "ad973508e2be47a08761dab70d8fd3b3",
+      "Id": "2c08c310931445fe82eaf815dd610f43",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "7706955a1fc24854a6b67e40684a8b47",
+      "End": "2f4839de0c8d414f9c312d00d2704e80",
+      "Id": "56724fd6f6f447ecb53689fa9643c93e",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "7706955a1fc24854a6b67e40684a8b47",
+      "End": "ed42d7c177974ce5ba07f1d045fde30e",
+      "Id": "c3847f4a7ecf44128f4f92f65ab44562",
+      "IsHidden": "False"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "2.13",
+      "Data": {}
+    }
+  ],
+  "Author": "",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 10000.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.13.1.3887",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "ConnectorPins": [],
+    "NodeViews": [
+      {
+        "Name": "Document.Current",
+        "ShowGeometry": true,
+        "Id": "fd84e115f3d5471c85465fbc8d574de1",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 203.029137180293,
+        "Y": 283.6378359309831
+      },
+      {
+        "Name": "Selection.CorridorByName",
+        "ShowGeometry": true,
+        "Id": "1ae8d63981114c8eb3bb3fad41654d0d",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 502.22432813803357,
+        "Y": 128.0
+      },
+      {
+        "Name": "CORRIDOR NAME",
+        "ShowGeometry": true,
+        "Id": "ab7ce1125fec461098e655e4acaf7875",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 185.35322640003051,
+        "Y": -179.97433203144084
+      },
+      {
+        "Name": "Corridor.Baselines",
+        "ShowGeometry": true,
+        "Id": "c2895c127e694d11b8ab0b56af7b5386",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 842.52437021434662,
+        "Y": 135.48205208520818
+      },
+      {
+        "Name": "Baseline.EndStation",
+        "ShowGeometry": true,
+        "Id": "f9c7ecb9a165417195a7719385114c34",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1574.7818515058709,
+        "Y": 373.58950827749641
+      },
+      {
+        "Name": "Baseline.StartStation",
+        "ShowGeometry": true,
+        "Id": "8d2e453782ce4e0bb0edb316a87326c2",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1561.9453634689887,
+        "Y": 135.33246654980977
+      },
+      {
+        "Name": "FRECUENCY",
+        "ShowGeometry": true,
+        "Id": "6e2b56198c904a1386d36e502d230aa1",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1914.2910670841979,
+        "Y": -193.78174082600754
+      },
+      {
+        "Name": "Baseline.CoordinateSystemByStation",
+        "ShowGeometry": true,
+        "Id": "d8dfac1edaf14d26bf0ce07c2603bd2b",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2227.5261372848786,
+        "Y": 298.09894898100777
+      },
+      {
+        "Name": "CoordinateSystem.ZXPlane",
+        "ShowGeometry": true,
+        "Id": "e7236bda74674bf3b601a51148bdb119",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2635.8412286943735,
+        "Y": 305.62447901079611
+      },
+      {
+        "Name": "Corridor.GetSolids",
+        "ShowGeometry": true,
+        "Id": "89e7fb5019a4433fb5c30a1a743862f4",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1903.6125687565104,
+        "Y": 698.75455933926048
+      },
+      {
+        "Name": "Baseline.Name",
+        "ShowGeometry": true,
+        "Id": "857c24bc7c0f475faacc15ac8fb4a640",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1584.6392809739862,
+        "Y": 736.62464884874214
+      },
+      {
+        "Name": "REGION NAME",
+        "ShowGeometry": true,
+        "Id": "1e4883c383424a13b086a58fcc9ee4da",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1289.6234240169824,
+        "Y": 1012.4681872952218
+      },
+      {
+        "Name": "ASSEMBLY NAME",
+        "ShowGeometry": true,
+        "Id": "f0d403e3699642ea87b53309831a8044",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1289.6234240169824,
+        "Y": 1148.0080870771978
+      },
+      {
+        "Name": "CODE NAME",
+        "ShowGeometry": true,
+        "Id": "707cd4b0cee842b3a96aee9c85c91ff8",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1289.6234240169824,
+        "Y": 1285.8593501761452
+      },
+      {
+        "Name": "Solid.SliceByPlanes",
+        "ShowGeometry": true,
+        "Id": "126342d6f74a47af94c813fe7bbbfe76",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 3015.8920787976563,
+        "Y": 538.35484388465943
+      },
+      {
+        "Name": "Code Block",
+        "ShowGeometry": true,
+        "Id": "2b7bd6d8df814157b8f912ad50233a27",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1109.2691482366115,
+        "Y": 144.69637167314011
+      }
+    ],
+    "Annotations": [
+      {
+        "Id": "a03262c4164141cc8a6099bf478f3a21",
+        "Title": "STATIONS COORDINATES & PLANE",
+        "DescriptionText": "<Double click here to edit group description>",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "f9c7ecb9a165417195a7719385114c34",
+          "8d2e453782ce4e0bb0edb316a87326c2",
+          "d8dfac1edaf14d26bf0ce07c2603bd2b",
+          "e7236bda74674bf3b601a51148bdb119"
+        ],
+        "HasNestedGroups": false,
+        "Left": 1551.9453634689887,
+        "Top": 62.332466549809766,
+        "Width": 1367.8958652253848,
+        "Height": 443.25704172768667,
+        "FontSize": 36.0,
+        "InitialTop": 135.33246654980977,
+        "InitialHeight": 383.25704172768667,
+        "TextblockHeight": 63.0,
+        "Background": "#FF71C6A8"
+      },
+      {
+        "Id": "34ac72e197524f4a888f5bdf51bf8fd1",
+        "Title": "CORRIDOR MAP",
+        "DescriptionText": "<Double click here to edit group description>",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "89e7fb5019a4433fb5c30a1a743862f4",
+          "857c24bc7c0f475faacc15ac8fb4a640"
+        ],
+        "HasNestedGroups": false,
+        "Left": 1574.6392809739862,
+        "Top": 625.75455933926048,
+        "Width": 590.97328778252427,
+        "Height": 375.0,
+        "FontSize": 36.0,
+        "InitialTop": 698.75455933926048,
+        "InitialHeight": 182.87008950948166,
+        "TextblockHeight": 63.0,
+        "Background": "#FFB9F9E1"
+      },
+      {
+        "Id": "62c12658dfd44ece875b91d9696c036a",
+        "Title": "CORRIDOR NAME",
+        "DescriptionText": "<Double click here to edit group description>",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "ab7ce1125fec461098e655e4acaf7875"
+        ],
+        "HasNestedGroups": false,
+        "Left": 175.35322640003051,
+        "Top": -304.97433203144084,
+        "Width": 222.0,
+        "Height": 257.0,
+        "FontSize": 36.0,
+        "InitialTop": -179.97433203144084,
+        "InitialHeight": 145.0,
+        "TextblockHeight": 115.0,
+        "Background": "#FFA4E1FF"
+      },
+      {
+        "Id": "858cfcc5ba344d9f8ebf85d6f04e0db0",
+        "Title": "DATA CORRIDOR AND ALIGNMENT",
+        "DescriptionText": "<Double click here to edit group description>",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "fd84e115f3d5471c85465fbc8d574de1",
+          "1ae8d63981114c8eb3bb3fad41654d0d",
+          "c2895c127e694d11b8ab0b56af7b5386",
+          "2b7bd6d8df814157b8f912ad50233a27"
+        ],
+        "HasNestedGroups": false,
+        "Left": 193.029137180293,
+        "Top": 55.0,
+        "Width": 1198.2400110563185,
+        "Height": 360.6378359309831,
+        "FontSize": 36.0,
+        "InitialTop": 128.0,
+        "InitialHeight": 300.6378359309831,
+        "TextblockHeight": 63.0,
+        "Background": "#FF71C6A8"
+      },
+      {
+        "Id": "9313dd82b0c346bea32de610b4dfd5de",
+        "Title": "FRECUENCY",
+        "DescriptionText": "<Double click here to edit group description>",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "6e2b56198c904a1386d36e502d230aa1"
+        ],
+        "HasNestedGroups": false,
+        "Left": 1904.2910670841979,
+        "Top": -275.78174082600754,
+        "Width": 222.0,
+        "Height": 244.0,
+        "FontSize": 36.0,
+        "InitialTop": -193.78174082600754,
+        "InitialHeight": 145.0,
+        "TextblockHeight": 72.0,
+        "Background": "#FFA4E1FF"
+      },
+      {
+        "Id": "ea7cb7147cbf41af91433db20fc1aed5",
+        "Title": "DATA CORRIDOR",
+        "DescriptionText": "<Double click here to edit group description>",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "1e4883c383424a13b086a58fcc9ee4da",
+          "f0d403e3699642ea87b53309831a8044",
+          "707cd4b0cee842b3a96aee9c85c91ff8"
+        ],
+        "HasNestedGroups": false,
+        "Left": 1279.6234240169824,
+        "Top": 887.46818729522181,
+        "Width": 221.0,
+        "Height": 530.39116288092339,
+        "FontSize": 36.0,
+        "InitialTop": 1012.4681872952218,
+        "InitialHeight": 418.39116288092339,
+        "TextblockHeight": 115.0,
+        "Background": "#FFA4E1FF"
+      }
+    ],
+    "X": -1263.6576478882268,
+    "Y": -1116.2165022241084,
+    "Zoom": 1.3376924077842642
+  }
+}
