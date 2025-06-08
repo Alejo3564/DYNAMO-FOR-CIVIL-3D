@@ -1,0 +1,495 @@
+{
+  "Uuid": "9273c777-33e3-4df2-ac96-69e743edbbed",
+  "IsCustomNode": false,
+  "Description": null,
+  "Name": "Select_by_Pstes",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [
+    {
+      "Id": "8f28adede45042648a3748c35992fc3f",
+      "Name": "PROPERTY SET DEFINITION NAME",
+      "Type": "string",
+      "Type2": "string",
+      "Value": "Corridor Shape Information",
+      "Description": "Creates a string.",
+      "SelectedIndex": 0
+    },
+    {
+      "Id": "81cbed7dab3144a0990f986be1294806",
+      "Name": "Valor",
+      "Type": "string",
+      "Type2": "string",
+      "Value": "TDP_PUENTE_CAJON",
+      "Description": "Creates a string.",
+      "SelectedIndex": 0
+    }
+  ],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.AutoCAD.DynamoNodes.Document.Current",
+      "Id": "ffe008c32a0c4ad5a9b892b4ebb24ef9",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "3d19634ef9b34ac98caa96c12972d910",
+          "Name": "Document",
+          "Description": "Document",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Get the current AutoCAD document.\n\nDocument.Current: Document"
+    },
+    {
+      "ConcreteType": "Autodesk.AutoCAD.DynamoNodes.AcObjectsByProperty, AutoCADNodesUI",
+      "NodeType": "ExtensionNode",
+      "Id": "720f7ea41f1b4f1f987193db88ae0047",
+      "Inputs": [
+        {
+          "Id": "4803e7db139c465080b01c01063ffa07",
+          "Name": "document",
+          "Description": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "a1387e0711cd423d92af687f50c0b4de",
+          "Name": "propertySetName",
+          "Description": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "e4a6533a742141f48b5d0cfefd7f0a3a",
+          "Name": "propertyName",
+          "Description": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "566992cebe6e41f895936102d64b7b40",
+          "Name": "propertyValue",
+          "Description": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "73d0a1356e5b47aba89e63555f2d6f96",
+          "Name": "valueOperator",
+          "Description": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "ab619ca975fd4d03893a91e05205b592",
+          "Name": "Object[]",
+          "Description": "Object[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Select the objects based on name and value of property, and property set."
+    },
+    {
+      "ConcreteType": "Autodesk.AutoCAD.DynamoNodes.ValueOperators, AutoCADNodesUI",
+      "SelectedIndex": 0,
+      "SelectedString": "=",
+      "NodeType": "ExtensionNode",
+      "Id": "995c940b47bd45428752de3e91bc9064",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "6d07eb4662e44d4e92cf639e495d0576",
+          "Name": "ValueOperators",
+          "Description": "string",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Select a value operator provided for an Object by Property node."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
+      "NodeType": "StringInputNode",
+      "InputValue": "AssemblyName",
+      "Id": "675c76a7254749a28e5b8b8ba4e78993",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "b59d3c49ffe94d1b85e9fb1697fd5cf4",
+          "Name": "",
+          "Description": "String",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a string."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
+      "NodeType": "StringInputNode",
+      "InputValue": "Corridor Shape Information",
+      "Id": "8f28adede45042648a3748c35992fc3f",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "d921791119404b95a33e7b37e53e1d6a",
+          "Name": "",
+          "Description": "String",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a string."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Camber.AutoCAD.Objects.Object.Select@Autodesk.AutoCAD.DynamoNodes.Object[]",
+      "Id": "651f3a7f3c33452ea9b8396fca0af7ee",
+      "Inputs": [
+        {
+          "Id": "d876b83374424c0c94d74368dfe039bb",
+          "Name": "objects",
+          "Description": "Object[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "71b08f34b63440eeaef8e583f2aa511c",
+          "Name": "Object[]",
+          "Description": "Object[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Selects Objects in the current document. This mimics the behavior of clicking on an object.\n\nObject.Select (objects: Object[]): Object[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.Flatten@var[]..[],int",
+      "Id": "b0f5561bc23d41afb57fd512f3a80541",
+      "Inputs": [
+        {
+          "Id": "fdfbfeef5ee74d3a8c53284628801684",
+          "Name": "list",
+          "Description": "List to flatten.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "0c72ad17475d442fa9af3f2c788ec4d9",
+          "Name": "amount",
+          "Description": "Layers of list nesting to remove (-1 will remove all list nestings)\n\nint\nDefault value : -1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "51d3fbc2419743259238b503aee3a3d2",
+          "Name": "list",
+          "Description": "Flattened list by amount",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Flattens a nested list of lists by a certain amount.\n\nList.Flatten (list: var[]..[], amount: int = -1): var[]..[]"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
+      "NodeType": "StringInputNode",
+      "InputValue": "TDP_PUENTE_CAJON",
+      "Id": "81cbed7dab3144a0990f986be1294806",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "0d3c5dc16eda4b5e8e33d9edcee7646a",
+          "Name": "",
+          "Description": "String",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a string."
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "3d19634ef9b34ac98caa96c12972d910",
+      "End": "4803e7db139c465080b01c01063ffa07",
+      "Id": "1e1005c4f8054aab987983852ba6ed62",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "ab619ca975fd4d03893a91e05205b592",
+      "End": "fdfbfeef5ee74d3a8c53284628801684",
+      "Id": "b1a663012f514aa7abf13e66a2894c8e",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "6d07eb4662e44d4e92cf639e495d0576",
+      "End": "73d0a1356e5b47aba89e63555f2d6f96",
+      "Id": "a3fd662435ee4c6ca913363be306d5a0",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "b59d3c49ffe94d1b85e9fb1697fd5cf4",
+      "End": "e4a6533a742141f48b5d0cfefd7f0a3a",
+      "Id": "c579797957cc4d239a00a57af3ea0ed7",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "d921791119404b95a33e7b37e53e1d6a",
+      "End": "a1387e0711cd423d92af687f50c0b4de",
+      "Id": "1cb8b938dca141a2a13a50fad289dc34",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "51d3fbc2419743259238b503aee3a3d2",
+      "End": "d876b83374424c0c94d74368dfe039bb",
+      "Id": "bd3a7656622942a8a22e126afaf3c3ae",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "0d3c5dc16eda4b5e8e33d9edcee7646a",
+      "End": "566992cebe6e41f895936102d64b7b40",
+      "Id": "3c4791acb5c8483ebb071553e462ff84",
+      "IsHidden": "False"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [
+    {
+      "Name": "Camber",
+      "Version": "4.2.6",
+      "ReferenceType": "Package",
+      "Nodes": [
+        "651f3a7f3c33452ea9b8396fca0af7ee"
+      ]
+    }
+  ],
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "2.15",
+      "Data": {}
+    }
+  ],
+  "Author": "None provided",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.15.1.6076",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "ConnectorPins": [],
+    "NodeViews": [
+      {
+        "Id": "ffe008c32a0c4ad5a9b892b4ebb24ef9",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Document.Current",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 2131.5435779995587,
+        "Y": -360.9509097994578
+      },
+      {
+        "Id": "720f7ea41f1b4f1f987193db88ae0047",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "ObjectsByProperty",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 2562.1174666602542,
+        "Y": -217.21147588820992
+      },
+      {
+        "Id": "995c940b47bd45428752de3e91bc9064",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Value Operators",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 2134.1174666602542,
+        "Y": 103.78852411179008
+      },
+      {
+        "Id": "675c76a7254749a28e5b8b8ba4e78993",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "FIELD",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 2097.3537867407958,
+        "Y": -213.87291038485495
+      },
+      {
+        "Id": "8f28adede45042648a3748c35992fc3f",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Name": "PROPERTY SET DEFINITION NAME",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 1634.6368846303783,
+        "Y": -368.28995843853403
+      },
+      {
+        "Id": "651f3a7f3c33452ea9b8396fca0af7ee",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Object.Select",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 3133.8861277027122,
+        "Y": -80.898120362917922
+      },
+      {
+        "Id": "b0f5561bc23d41afb57fd512f3a80541",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "List.Flatten",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 2843.4471149143833,
+        "Y": -80.3388089169344
+      },
+      {
+        "Id": "81cbed7dab3144a0990f986be1294806",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Name": "Valor",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 1859.4213442147195,
+        "Y": 34.932467024226696
+      }
+    ],
+    "Annotations": [
+      {
+        "Id": "b923ae83782c41e8a06a64bc273b2087",
+        "Title": "PROPERTY SET DEFINITION NAME",
+        "DescriptionText": "",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "8f28adede45042648a3748c35992fc3f"
+        ],
+        "HasNestedGroups": false,
+        "Left": 1624.6368846303783,
+        "Top": -484.28995843853403,
+        "Width": 348.0,
+        "Height": 267.0,
+        "FontSize": 36.0,
+        "InitialTop": -368.28995843853403,
+        "InitialHeight": 145.0,
+        "TextblockHeight": 106.0,
+        "Background": "#FFFFB8D8"
+      },
+      {
+        "Id": "3a67dfea15124c5688f6a7a55d9daff8",
+        "Title": "<Double click here to edit group title>",
+        "DescriptionText": "<Double click here to edit group description>",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "ffe008c32a0c4ad5a9b892b4ebb24ef9",
+          "720f7ea41f1b4f1f987193db88ae0047",
+          "995c940b47bd45428752de3e91bc9064",
+          "675c76a7254749a28e5b8b8ba4e78993"
+        ],
+        "HasNestedGroups": false,
+        "Left": 2087.3537867407958,
+        "Top": -433.9509097994578,
+        "Width": 697.76367991945835,
+        "Height": 669.73943391124794,
+        "FontSize": 36.0,
+        "InitialTop": -360.9509097994578,
+        "InitialHeight": 609.73943391124794,
+        "TextblockHeight": 63.0,
+        "Background": "#FFB9F9E1"
+      }
+    ],
+    "X": -553.909939970012,
+    "Y": 450.72261388580631,
+    "Zoom": 0.45430248697682019
+  }
+}
