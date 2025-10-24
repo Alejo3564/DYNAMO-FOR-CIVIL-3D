@@ -1,0 +1,186 @@
+{
+  "Uuid": "eba293f2-db5a-48b6-89a3-1ad5521aff54",
+  "IsCustomNode": false,
+  "Description": null,
+  "Name": "Rail_Concrete Ties_2",
+  "ElementResolver": {
+    "ResolutionMap": {
+      "Math": {
+        "Key": "DSCore.Math",
+        "Value": "DSCoreNodes.dll"
+      }
+    }
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "f1091f19117648b69117a753a98b1f14",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "c05b0356c0674770b86a290bb602780c",
+          "Name": "sourceBlock",
+          "Description": "Source block definition of the block reference\n\nBlock",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "e5122bbde6764f06999fe52643ec1285",
+          "Name": "insertionPoint",
+          "Description": "Insertion point of the block reference\n\nPoint",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "968f51d1ef9444a8ba1c4eb801ed0521",
+          "Name": "rotation",
+          "Description": "Rotation of the block reference in decimal degrees\n\ndouble\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "d11271de6dd14cfaa163ff0dcfaf32a1",
+          "Name": "scale",
+          "Description": "Uniform scale of the block reference\n\ndouble\nDefault value : 1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "15eec0ed320546a79f8f4c3b179ad10d",
+          "Name": "normal",
+          "Description": "Normal vector of the block reference. By default, the Z-axis in the world coordinate system (WCS) will be used.\n\nVector\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "3ba1605e863b424db0942fbf2bc2ab61",
+          "Name": "layerName",
+          "Description": "Name of the layer the block reference will be created on. By default, the current layer will be used.\n\nstring\nDefault value : \"\"",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "e2ce57214d6a48cc87e6af5730466300",
+          "Name": "block",
+          "Description": "Block the block reference will be created in. By default, the block reference will be created in model space of the current document.\n\nBlock\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "544ce32778fb401c99375996cc1caa5c",
+          "Name": "BlockReference",
+          "Description": "Block reference",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Autodesk.AutoCAD.DynamoNodes.BlockReference.ByPoint@Autodesk.AutoCAD.DynamoNodes.Block,Autodesk.DesignScript.Geometry.Point,double,double,Autodesk.DesignScript.Geometry.Vector,string,Autodesk.AutoCAD.DynamoNodes.Block",
+      "Replication": "Auto",
+      "Description": "Creates a block reference at a point\n\nBlockReference.ByPoint (sourceBlock: Block, insertionPoint: Point, rotation: double = 0, scale: double = 1, normal: Vector = null, layerName: string = \"\", block: Block = null): BlockReference"
+    }
+  ],
+  "Connectors": [],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "EnableLegacyPolyCurveBehavior": true,
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "3.4",
+      "Data": {}
+    }
+  ],
+  "Author": "None provided",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "3.4.1.7055",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "_Background Preview",
+      "EyeX": 294.6037902832031,
+      "EyeY": 17.50550365447998,
+      "EyeZ": -179.62942504882812,
+      "LookX": 210.42257690429688,
+      "LookY": -47.23784637451172,
+      "LookZ": -153.5025634765625,
+      "UpX": 0.14416657388210297,
+      "UpY": 0.983948826789856,
+      "UpZ": -0.10516905039548874
+    },
+    "ConnectorPins": [],
+    "NodeViews": [
+      {
+        "Id": "f1091f19117648b69117a753a98b1f14",
+        "Name": "BlockReference.ByPoint",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 3648.7231238367035,
+        "Y": 245.2207171971149
+      }
+    ],
+    "Annotations": [
+      {
+        "Id": "b39d5a05f3ee4309841e997fab61628a",
+        "Title": "Create Block References",
+        "DescriptionText": null,
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "f1091f19117648b69117a753a98b1f14"
+        ],
+        "HasNestedGroups": false,
+        "Left": 3638.7231238367035,
+        "Top": 129.2207171971149,
+        "Width": 321.0,
+        "Height": 453.0,
+        "FontSize": 36.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": 245.2207171971149,
+        "InitialHeight": 469.0,
+        "TextblockHeight": 106.0,
+        "Background": "#FFC1D676"
+      }
+    ],
+    "X": -3012.988517539189,
+    "Y": 83.79419118209523,
+    "Zoom": 0.9625824128756392
+  }
+}
